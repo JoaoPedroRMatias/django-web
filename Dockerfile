@@ -10,7 +10,7 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 # Define a porta em que a aplicação irá rodar
-EXPOSE 80
+EXPOSE 8000
 
 # Define o comando para rodar a aplicação
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
