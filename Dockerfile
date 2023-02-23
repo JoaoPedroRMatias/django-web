@@ -1,4 +1,4 @@
-FROM python:3.10.10-bullseye
+FROM python:3.10.10-alpine3.17
 
 # Define o diretório de trabalho
 WORKDIR /app
@@ -10,7 +10,7 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 # Define a porta em que a aplicação irá rodar
-EXPOSE 8000
+EXPOSE 80
 
 # Define o comando para rodar a aplicação
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
