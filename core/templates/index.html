@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="{% static 'css/stile.css' %}">
+</head>
+<body>
+    <center>
+
+    <h1><a href="/">HOME</a></h1>
+    <br>
+    <img src="{% static 'images/sonicjudeu.jpg' %}" alt="SONIC">
+    <h1>{{title}}</h1>
+    <h3>Aqui vendemos de tudo por um preço nada justo</h3>
+
+    <h2>Produtos da loja:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Produtos</th>
+                <th>Preços</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produto %}
+                <tr>
+                    <td><a href="{% url 'produto' produto.id %}">{{produto.nome}}</a></td>
+                    <td>{{produto.preco}}</td>
+                </tr>
+            {% endfor %}          
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/contact">Ir para contatos</a>
+    <br>
+    <br>
+    <button onclick="jsclick();">Orar por bons preços</button>
+
+    </center>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html> 
